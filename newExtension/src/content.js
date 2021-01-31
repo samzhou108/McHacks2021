@@ -28,6 +28,12 @@ var dictionary = { 'bad': 'good',
                    'worst': 'best',
                    'loss': 'win',
                    'threats': 'gifts',
+                   'terrible': 'amazing',
+                   'tragedy': 'fortune',
+                   'death': 'life',
+                   'dead': 'alive',
+                   'fire': 'water fight',
+                   'injured': 'healthy'
                 },
   regexp = RegExp ('\\b(' + Object.keys (dictionary).join ('|') + ')\\b', 'ig');
 
@@ -41,13 +47,15 @@ for (var i = 0; i < elements.length; i++) {
 
         if (node.nodeType === 3) {
             var text = node.nodeValue;
-            var replacedText = text.replace(/cal/gi, "butt"); // replaces "cal," "Cal", etc. with "butt"
-            replacedText = replacedText.replace(/tree/gi, "awesome");
-            replacedText = replacedText.replace(/space/gi, "spaaaace");
+            var replacedText = text.replace(/cal/gi, "cal"); // replaces "cal," "Cal", etc. with "butt"
+            //replacedText = replacedText.replace(/tree/gi, "awesome");
+            //xkcd stuff
+            replacedText = replacedText.replace(/space/gi, "spaaaace"); 
             replacedText = replacedText.replace(/witnesses/gi, "these dudes I know");
             replacedText = replacedText.replace(/alledgedly/gi, "kinda probably");
             replacedText = replacedText.replace(/rebuild/gi, "avenge");
-            replacedText = replacedText.replace(/coronavirus|COVID|COVID-19/gi, "Corona the beer");
+            //covid stuff
+            replacedText = replacedText.replace(/coronavirus|COVID|COVID-19/gi, "Awesome Life");
             replacedText = replacedText.replace(/fuck|shit/gi, "owo");
 
 

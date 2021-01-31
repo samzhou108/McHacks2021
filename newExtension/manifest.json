@@ -13,11 +13,11 @@
 {
   // Required
   "manifest_version": 2,
-  "name": "Cal to Butt",
+  "name": "Positive Life Filter",
   "version": "0.0.1",
 
   // Recommended
-  "description": "Chrome Extension Hackpack @ TreeHacks 2019",
+  "description": "Reading the news can be sad, but with this plugin, you can filter those negative words and replace them with more positive words",
   "icons": {
     "16": "icons/TreeHacks-white-16.png",
     "32": "icons/TreeHacks-white-32.png",
