@@ -1,5 +1,5 @@
 {
-  "name": "HealthINFO",
+  "name": "healthINFO",
   "version": "1.0",
   "description": "check facts in relevant PubMed articles",
   "permissions": ["tabs"],
