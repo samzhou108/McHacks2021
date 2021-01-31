@@ -6,16 +6,17 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def enter_info():
-    value = input("Please enter your question:\n")
+# def enter_info():
+
+value = input("Please enter your question:\n")
 
 
 # extract keywords
 
-payload = {'term': 'covid 19 mental health', 'format': 'abstract', 'size': '10'}
+payload = {'term': value, 'format': 'abstract', 'size': '10'}
 
 response = requests.get("https://pubmed.ncbi.nlm.nih.gov/", params=payload)
-print(response.status_code)
+# print(response.status_code)
 # print(response.text)
 soup = BeautifulSoup(response.text, "html.parser")
 
@@ -24,19 +25,28 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 #output = soup.prettify()
 #print(output)
+counter=0
 
 total_results = soup.find(class_='value')
 titles_blocks = soup.find_all("h1", class_="heading-title")
+abstracts = soup.find_all(class_="abstract-content selected")
+# print(abstracts)
+for abstr in abstracts:
+    # print(abstr.get_text(strip=True))
+    result = abstr.get_text(strip=True).partition("Conclusion") [2]
+    print(result)
+    result2 = abstr.get_text(strip=True).partition("conclusion")[2]
+    print(result2)
 
 print(total_results.get_text())
 
-counter=0
+
 for titles in titles_blocks:
     lines = titles.get_text().strip()
     counter += 1
     if counter%2 != 0:
         continue
-    print(lines)
+    # print(lines)
 
 counter = int(counter/2)
 print(counter)
@@ -58,7 +68,7 @@ def print_hi(name):
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# if __name__ == '__main__':
+    # print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
