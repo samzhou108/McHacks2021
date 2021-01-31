@@ -6,6 +6,8 @@
  *
  * This file contains javascript code that is executed
  * everytime a webpage loads over HTTP or HTTPS.
+ * 
+ * This has been turned into a useless chrome extension where you can replace stuff on websites with other stuff
  */
 
 /*function clean (text) {
@@ -22,7 +24,8 @@
     });
   }*/
 
-var dictionary = { 'bad': 'good', 
+var dictionary = {
+                   'bad': 'good', 
                    'worse': 'better', 
                    'awful': 'wonderful',
                    'worst': 'best',
@@ -31,11 +34,21 @@ var dictionary = { 'bad': 'good',
                    'terrible': 'amazing',
                    'tragedy': 'fortune',
                    'death': 'life',
+                   'deaths': 'lives',
                    'dead': 'alive',
-                   'fire': 'water fight',
-                   'injured': 'healthy'
+                   'fire': 'fun water fight',
+                   'injured': 'healthy',
+                   'disaster': 'great event',
+                   'catastrophe': 'event where everyone is safe',
+                   'horrible': 'great',
+                   'agressive': 'kind',
+                   'evil': 'nice',
+                   'unfortunate': 'amazing',
+                   'fight': 'team up',
+                   'enemy': 'friend',
+                   'defeat': 'win'
                 },
-  regexp = RegExp ('\\b(' + Object.keys (dictionary).join ('|') + ')\\b', 'ig');
+  regexp = RegExp ('\\b(' + Object.keys (dictionary).join ('|') + ')\\b', 'ig'); //idk how this work found on stack overflow and it works
 
 var elements = document.getElementsByTagName('*');
 
@@ -55,9 +68,9 @@ for (var i = 0; i < elements.length; i++) {
             replacedText = replacedText.replace(/alledgedly/gi, "kinda probably");
             replacedText = replacedText.replace(/rebuild/gi, "avenge");
             //covid stuff
-            replacedText = replacedText.replace(/coronavirus|COVID|COVID-19/gi, "Awesome Life");
-            replacedText = replacedText.replace(/fuck|shit/gi, "owo");
-
+            replacedText = replacedText.replace(/coronavirus|COVID-19|COVID/gi, "Awesome Life");
+            replacedText = replacedText.replace(/fuck/gi, "owo");
+            replacedText = replacedText.replace(/shit/gi, "uwu");
 
             replacedText = replacedText.replace (regexp, function (_, word) { return dictionary[word.toLowerCase()]; });
 
