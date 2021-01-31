@@ -34,9 +34,9 @@ abstracts = soup.find_all(class_="abstract-content selected")
 for abstr in abstracts:
     # print(abstr.get_text(strip=True))
     result = abstr.get_text(strip=True).partition("Conclusion") [2]
-    # print(result)
+    print(result)
     result2 = abstr.get_text(strip=True).partition("conclusion")[2]
-    # print(result2)
+    print(result2)
 
 
 for titles in titles_blocks:
@@ -44,18 +44,14 @@ for titles in titles_blocks:
     counter += 1
     if counter%2 != 0:
         continue
-    print(lines)
+    # print(lines)
 
 print("Total Number of Research Articles: " + total_results.get_text())
 
 counter = int(counter/2)
 # print(counter)
 
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-img = mpimg.imread('image.jpg')
-imgplot = plt.imshow(img)
-plt.show()
+
 
 # access database
 # search for keywords
