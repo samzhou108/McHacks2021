@@ -1,0 +1,17 @@
+{
+  "name": "PubMed search",
+  "version": "1.0",
+  "description": "check facts in relevant PubMed articles",
+  "permissions": ["tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {},
+
+  "icons": {
+    "32": "images/icon.png"
+  },
+
+  "manifest_version": 2
+}
