@@ -69,8 +69,12 @@ for (var i = 0; i < elements.length; i++) {
             replacedText = replacedText.replace(/rebuild/gi, "avenge");
             //covid stuff
             replacedText = replacedText.replace(/coronavirus|COVID-19|COVID/gi, "Awesome Life");
+
+            //curse words
             replacedText = replacedText.replace(/fuck/gi, "owo");
             replacedText = replacedText.replace(/shit/gi, "uwu");
+
+            replacedText = replacedText.replace(/suicide|suicidal|abuse|blood|rape/gi, "[TW]");
 
             replacedText = replacedText.replace (regexp, function (_, word) { return dictionary[word.toLowerCase()]; });
 
